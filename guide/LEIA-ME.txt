@@ -1,0 +1,7 @@
+Minicurso QGIS e automação — Ifes Vitória
+
+1. Extraia todo o conteúdo deste ZIP para uma pasta.
+2. Abra index.html no navegador.
+3. Mantenha a pasta imagens junto do index.html.
+
+O guia, a apresentação, o cronômetro e as expressões funcionam sem internet. Os links para baixar os dados do projeto e consultar a documentação dependem de conexão.
