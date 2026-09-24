@@ -1,0 +1,28 @@
+name: Package QGIS course files
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'qgis/**'
+      - '.github/workflows/package-qgis.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  package:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Create ZIP containing only qgis/
+        run: |
+          mkdir -p docs/material
+          zip -q -r docs/material/qgis.zip qgis
+      - name: Commit archive if changed
+        run: |
+          git add docs/material/qgis.zip
+          if git diff --cached --quiet; then exit 0; fi
+          git -c user.name='github-actions[bot]' -c user.email='41898282+github-actions[bot]@users.noreply.github.com' commit -m 'Update QGIS course download'
+          git push

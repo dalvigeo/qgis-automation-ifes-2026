@@ -4,15 +4,15 @@ Material do minicurso **QGIS: Soluções com Automação de Fluxos de Trabalho**
 
 ## Conteúdo
 
-- `docs/`: guia e apresentação em HTML, com imagens e recursos disponíveis offline.
+- `guide/`: guia e apresentação em HTML, com imagens e recursos disponíveis offline.
 - `qgis/minicurso_ifes.qgz`: projeto QGIS.
 - `qgis/DADOS.gpkg`: camadas de entrada do exercício.
 - `qgis/ATLAS_FAIXA_DOMINIO.gpkg`: camadas usadas no atlas da faixa de domínio.
 - `scripts/Faixa_de_dominio_nativo.py`: algoritmo de Processamento para atualizar o atlas.
 
-## Como usar
+[Baixar somente a pasta QGIS (ZIP)](https://dalvigeo.github.io/qgis-automation-ifes-2026/material/qgis.zip)\n\n## Como usar
 
-1. Abra [o guia online](https://dalvigeo.github.io/qgis-automation-ifes-2026/) ou `docs/index.html` no navegador. Para consultar links externos do guia, conecte-se à internet.
+1. Abra `guide/index.html` no navegador. Para consultar links externos do guia, conecte-se à internet.
 2. Abra `qgis/minicurso_ifes.qgz` no QGIS 3.44 ou posterior. Mantenha os dois GeoPackages na mesma pasta do projeto para preservar as referências relativas.
 3. Se desejar executar o algoritmo, adicione `scripts/Faixa_de_dominio_nativo.py` aos scripts de Processamento do QGIS. No projeto, selecione as camadas de rodovia projetada e imóveis atingidos e execute **Faixa de domínio — atualizar atlas**. O algoritmo grava resultados em `qgis/ATLAS_FAIXA_DOMINIO.gpkg`; faça uma cópia desse arquivo antes de executar caso precise preservar seu estado original.
 
