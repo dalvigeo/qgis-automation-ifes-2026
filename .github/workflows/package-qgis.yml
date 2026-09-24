@@ -5,6 +5,7 @@ on:
     branches: [main]
     paths:
       - 'qgis/**'
+      - 'scripts/Faixa_de_dominio_nativo.py'
       - '.github/workflows/package-qgis.yml'
   workflow_dispatch:
 
@@ -20,9 +21,10 @@ jobs:
         run: |
           mkdir -p docs/material
           zip -q -r docs/material/qgis.zip qgis
+          cp scripts/Faixa_de_dominio_nativo.py docs/material/Faixa_de_dominio_nativo.py
       - name: Commit archive if changed
         run: |
-          git add docs/material/qgis.zip
+          git add docs/material/qgis.zip docs/material/Faixa_de_dominio_nativo.py
           if git diff --cached --quiet; then exit 0; fi
           git -c user.name='github-actions[bot]' -c user.email='41898282+github-actions[bot]@users.noreply.github.com' commit -m 'Update QGIS course download'
           git push
